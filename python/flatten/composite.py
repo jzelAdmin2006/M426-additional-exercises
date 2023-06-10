@@ -1,30 +1,48 @@
 from typing import Protocol
 
-class Cell(Protocol):
-    def get_left(self) -> 'Cell':
-        pass
 
-    def get_right(self) -> 'Cell':
-        pass
+class Node(Protocol):
+    pass
 
-class Value(Cell):
-    def __init__(self, left: 'Value', right: Cell):
-        self.left = left
-        self.right = right
-    
-    def get_left(self) -> 'Value':
-        return self.left
-    
-    def get_right(self) -> Cell:
-        return self.right
 
-class List(Cell):
-    def __init__(self, left: 'List', right: 'List'):
-        self.left = left
-        self.right = right
-    
-    def get_left(self) -> 'List':
-        return self.left
-    
-    def get_right(self) -> 'List':
-        return self.right
+class Value(Node):
+    def __init__(self, value: int):
+        self.value: int = value
+
+    def __str__(self) -> str:
+        return str(self.value)
+
+
+class List(Node):
+    def __init__(self, items: list[Node]):
+        self.items: list[Node] = items
+
+    def __str__(self) -> str:
+        return '[' + ', '.join(map(str, self.items)) + ']'
+
+
+class Composite:
+    def __init__(self):
+        self.items: list[Node] = []
+
+    def add(self, item: Node):
+        self.items.append(item)
+
+    def flatten(self) -> list[int]:
+        raise NotImplementedError('flatten is not implemented yet')
+
+    def __str__(self) -> str:
+        strings = map(str, self.items)
+        return ', '.join(strings)
+
+
+if __name__ == '__main__':
+    numbers = Composite()
+    numbers.add(Value(0))
+    numbers.add(List([Value(1), Value(2), Value(3)]))
+    numbers.add(Value(4))
+    numbers.add(List([Value(5), List([Value(6), List([Value(7)])])]))
+    numbers.add(Value(8))
+    numbers.add(List([Value(9)]))
+    print(numbers)
+    # print(numbers.flatten())
