@@ -20,7 +20,7 @@ from .isbn13 import ISBN13
         ("9783518380634", False),  # invalid checksum (messed up checksum)
     ],
 )
-def test_correct_isbn13(raw, expected):
+def test_valid_isbn13(raw, expected):
     # Arrange
     isbn13 = ISBN13(raw)
 
