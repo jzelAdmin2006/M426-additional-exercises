@@ -2,9 +2,9 @@ class RockPaperScissors:
     def __init__(self, player_one: str, player_two: str):
         valid = ["rock", "paper", "scissors"]
         if player_one not in valid:
-            raise ValueError(f"invalid move ${player_one}")
+            raise ValueError(f"invalid move {player_one}")
         if player_two not in valid:
-            raise ValueError(f"invalid move ${player_two}")
+            raise ValueError(f"invalid move {player_two}")
         self.player_one = player_one
         self.player_two = player_two
 
