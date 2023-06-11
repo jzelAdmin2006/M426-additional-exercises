@@ -84,6 +84,10 @@ Folgen Sie den Regeln von TDD beim Umsetzen der oben beschriebenen Methoden:
 2. Schreiben Sie nur so viel Testcode, um den Test zum Scheitern zu bringen.
 3. Schreiben Sie nur so viel Produktivcode, um den Test zum Durchlaufen zu bringen.
 
+Die Tests lassen sich folgendermassen ausführen:
+
+    $ pytest lottery
+
 Wenn Sie alle Methoden (korrekt) umgesetzt haben, können Sie die Simulation starten:
 
     $ python lottery/lottery.py
@@ -132,7 +136,10 @@ unentschieden. Ansonsten gelten folgende Regeln:
 - _Papier_ schlägt _Stein_ (umwickeln)
 - _Stein_ schlägt _Schere_ (zertrümmern)
 
-Die Spiellogik ist in `rock_paper_scissors/rock_paper_scissors.py` in der Klasse `RockPaperScossors` implementiert. Testfälle finden Sie in `rock_paper_scissors/rock_paper_scissors.py`; diese lassen sich folgendermassen ausführen:
+Die Spiellogik ist in `rock_paper_scissors/rock_paper_scissors.py` in der Klasse
+`RockPaperScossors` implementiert. Testfälle finden Sie in
+`rock_paper_scissors/rock_paper_scissors.py`; diese lassen sich folgendermassen
+ausführen:
 
     $ pytest rock_paper_scissors
 
@@ -147,7 +154,8 @@ Führen Sie die folgenden Refactorings aus, um diese Probleme zu lösen:
 1. Definieren Sie die Zusammenhänge zwischen den Spielzügen und den Ergebnissen
 _statisch_, d.h. in einer entsprechenden Datenstruktur. (Anhand der beiden
 Spielzüge kann das Spielergebnis nachgeschlagen werden.)
-2. Definieren Sie die Spielzüge und -ergebnisse els _Enumeration_ (Aufzählung):
+2. Definieren Sie die Spielzüge und -ergebnisse els
+[_Enumeration_](https://docs.python.org/3/library/enum.html) (Aufzählung):
     - Für den Spielzug: Enum `Move` mit Varianten `Rock`, `Paper`, `Scissors`
     - Für das Spielergebnis: Enum `Result` mit Varianten `PlayerOneWins`,
     `PlayerTwoWins`, `Draw`
