@@ -90,9 +90,29 @@ Wenn Sie alle Methoden (korrekt) umgesetzt haben, können Sie die Simulation sta
 
 # Aufgabe 2: ISBN-13 (Clean Code)
 
-- korrekte Implementierung
-- Tests gegeben
-- schlechter Code
+Bücher werden anhand einer
+[ISBN](https://de.wikipedia.org/wiki/Internationale_Standardbuchnummer)
+(internationale Standardbuchnummer) identifiziert. Früher war dies eine
+zehnstellige Zahl (ISBN-10). Heutzutage verwendet man die dreizehnstellige
+ISBN-13, um mit [EAN](https://de.wikipedia.org/wiki/European_Article_Number)
+(European Article Number) kompatibel zu sein. (Als Landespräfix wird die Zahl
+978 verwendet, welche für das fiktive Land _Buchland_ steht.)
+
+Die letzte Stelle einer ISBN-13 ist eine sogenannte Prüfsumme, mithilfe welcher
+man mögliche Fehler beim Übermitteln einer ISBN-13 bzw. Fehler beim Scanvorgang
+des Barcodes erkennen kann. Der Algorithmus zur [Berechnung der
+ISBN-13-Prüfsumme](https://de.wikipedia.org/wiki/Internationale_Standardbuchnummer#ISBN-13)
+ist in der Klasse `ISBN13` (`isbn13/isbn13.py`) implementiert. Hierzu gibt es
+zahlreiche (positive und negative) Testfälle in `isbn13/isbn13_test.py`, die Sie
+folgendermassen ausführen können:
+
+    $ pytest isbn13
+
+Der Produktivcode (`ISBN13.is_valid()`) weist einige stilistische Mängel auf und
+könnte wesentlich eleganter und besser lesbar formuliert werden.
+
+Verbessern Sie den Code und stelle Sie nach jeder Änderung sicher, dass die
+Testfälle noch durchlaufen!
 
 # Aufgabe 3: Schere, Stein, Papier (Refactoring)
 
