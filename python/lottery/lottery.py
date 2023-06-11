@@ -4,7 +4,7 @@ class LotteryDraw:
 
     def count_correct_numbers(self, bet: list[int]) -> int:
         # TODO: Count numbers in bet that are also in winning_numbers.
-        pass
+        return -1
 
     def get_reward(
         self, bet: list[int], rewards: dict[int, float], bet_cost: float
@@ -12,7 +12,7 @@ class LotteryDraw:
         # TODO: Count correct numbers and look up the reward in rewards.
         # If a reward is found, return the amount (player wins) minus the bet_cost.
         # If no reward is found, return the bet_cost as a negative value (player looses).
-        pass
+        return 0.0
 
 
 class Lottery:
