@@ -52,4 +52,34 @@ mit Enum arbeiten:
 
 # Aufgabe 4: Liste flach machen (Design Patterns)
 
-TODO: Tests vorgeben
+Mit dem
+[Composite](https://refactoring.guru/design-patterns/composite)-Entwurfsmuster
+können hierarchische Beziehungen als baumartige Strukturen modelliert werden,
+wie zum Beispiel in einem Dateisystem, wo es Ordner und Dateien gibt. Ordner
+können Dateien und andere Ordner enthalten. Dateien hingegen stehen ganz am Ende
+der Hierarchie.
+
+Im Ordner `flatten/` ist ein Composite implementiert (`composite.py`). Einem
+`Composite` können mithilfe der `add()`-Methode Elemente vom Typ `Node`
+hinzugefügt werden. Ein `Node` ist ein Protokoll, das von den beiden Klassen
+`Value` und `List` implementiert wird. Ein `Value` besteht aus einem
+ganzzahligen Wert. Eine `List` besteht aus einer Reihe von `Node`-Objekten, die
+entweder ein einfacher `Value` oder wieder eine `List` sein können. Dadurch
+lassen sich beliebig tief verschachtelte Strukturen aufbauen. Das Beispielskript
+in `flatten/composite.py` baut folgende  Struktur auf:
+
+    0, [1, 2, 3], 4, [5, [6, [7]]], 8, [9]
+
+Die Methode `Composite.flatten()` soll aus dieser Struktur eine Flache Liste erzeugen, die in diesem Fall folgendermassen aussehen sollte:
+
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+Implementieren Sie  die Methode `Composite.flatten()`!
+
+Testfälle sind in `flatten/composite_test.py` vorhanden:
+
+    $ pytest flatten/composite_test.py
+
+Sie können das Beispielskript folgendermassen ausführen:
+
+    $ pytest flatten/composite.py
