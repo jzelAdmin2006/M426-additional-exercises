@@ -9,7 +9,7 @@ public class Program
         numbers.Add(new List(new Node[] {
             new Value(1),
             new Value(2),
-            new Value(3)
+            new Value(3),
         }));
         numbers.Add(new Value(4));
         numbers.Add(new List(new Node[] {

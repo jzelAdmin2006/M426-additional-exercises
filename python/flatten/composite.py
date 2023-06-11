@@ -7,10 +7,10 @@ class Node(Protocol):
 
 class Value(Node):
     def __init__(self, value: int):
-        self.value: int = value
+        self.val: int = value
 
     def __str__(self) -> str:
-        return str(self.value)
+        return str(self.val)
 
 
 class List(Node):
