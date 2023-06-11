@@ -32,8 +32,7 @@ class Composite:
         raise NotImplementedError("flatten is not implemented yet")
 
     def __str__(self) -> str:
-        strings = map(str, self.items)
-        return ", ".join(strings)
+        return ", ".join(map(str, self.items))
 
 
 if __name__ == "__main__":
