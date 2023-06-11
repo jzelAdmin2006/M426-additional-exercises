@@ -44,7 +44,7 @@ Geldbetrag von CHF 2.- kann man einen Tipp abgeben. Der Spieler tippt auf die
 Zahlen 1, 13, 25, 37, 41 und 45. Die Ziehung ergibt die Zahlen 5, 13, 24, 37, 44
 und 45. Der Spieler hat drei richtige Zahlen getippt (13, 37 und 45). Er gewinnt
 einen Betrag von CHF 5.- und hat abzüglich der investierten CHF 2.- nun einen
-Gewinn von CHF 3.-.
+Nettogewinn von CHF 3.-.
 
 Im Ordner `lottery/` ist eine solche Lottosimulation als Skript vorbereitet. Die Simulation funktioniert jedoch noch nicht, da die Programmlogik noch fehlt. Diese solle Sie mithilfe von _Test-Driven Development_ umsetzen!
 

@@ -21,7 +21,7 @@ class Lottery:
         self.max_number = max_number
         self.draw_size = draw_size
 
-    def draw() -> LotteryDraw:
+    def draw(self) -> LotteryDraw:
         # TODO: Draw draw_size random numbers from min_number to max_number.
         return LotteryDraw([])
 
