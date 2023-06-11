@@ -116,10 +116,47 @@ Testfälle noch durchlaufen!
 
 # Aufgabe 3: Schere, Stein, Papier (Refactoring)
 
-mit Enum arbeiten:
+Beim Spiel [_Schere, Stein,
+Papier_](https://de.wikipedia.org/wiki/Schere,_Stein,_Papier) (engl. _Rock,
+Paper, Scissors_) treten zwei Spieler gegeneinander an, wobei Sie durch
+gleichzeitiges Vorzeigen eines Handzeichens ihren Spielzug formulieren:
 
-- Move(Rock, Paper, Scissor)
-- Result(LeftWins, RightWins, Draw)
+- _Schere_: Zeigefinger und Mittelfinger gespreizt
+- _Stein_: Hand zu einer Faust geballt
+- _Papier_: Flache Hand
+
+Machen beide Spieler den gleichen Spielzug, ist das Ergebnis des Spiels
+unentschieden. Ansonsten gelten folgende Regeln:
+
+- _Schere_ schlägt _Papier_ (zerschneiden)
+- _Papier_ schlägt _Stein_ (umwickeln)
+- _Stein_ schlägt _Schere_ (zertrümmern)
+
+Die Spiellogik ist in `rock_paper_scissors/rock_paper_scissors.py` in der Klasse `RockPaperScossors` implementiert. Testfälle finden Sie in `rock_paper_scissors/rock_paper_scissors.py`; diese lassen sich folgendermassen ausführen:
+
+    $ pytest rock_paper_scissors
+
+Der Code von `RockPaperScissors` weist verschiedene Mängel auf:
+
+1. Die Spiellogik (`winner()`-Methode) ist etwas umständlich implementiert.
+2. Die Spiellogik verwendet Zeichenketten und Ganzzahlen um Spielzüge und
+Ergebnisse zu codieren.
+
+Führen Sie die folgenden Refactorings aus, um diese Probleme zu lösen:
+
+1. Definieren Sie die Zusammenhänge zwischen den Spielzügen und den Ergebnissen
+_statisch_, d.h. in einer entsprechenden Datenstruktur. (Anhand der beiden
+Spielzüge kann das Spielergebnis nachgeschlagen werden.)
+2. Definieren Sie die Spielzüge und -ergebnisse els _Enumeration_ (Aufzählung):
+    - Für den Spielzug: Enum `Move` mit Varianten `Rock`, `Paper`, `Scissors`
+    - Für das Spielergebnis: Enum `Result` mit Varianten `PlayerOneWins`,
+    `PlayerTwoWins`, `Draw`
+    
+Für das erste Refactoring brauchen Sie nichts an den Tests anzupassen. Für das
+zweite Refactoring müssen Sie die Schnittstelle verändern, da Sie neu Enums und
+nicht mehr Zeichenketten bzw. Ganzzahlen erwarten bzw. zurückgeben.
+
+Wird der Code durch die Verwendung von Enums "besser"? Inwiefern?
 
 # Aufgabe 4: Liste flach machen (Design Patterns)
 
