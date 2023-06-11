@@ -1,6 +1,6 @@
 namespace Flatten.Tests;
 
-public class UnitTest1
+public class CompositeTest
 {
     [Fact]
     public void TestFlattenEmptyComposite()
