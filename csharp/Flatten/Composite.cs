@@ -14,7 +14,7 @@ public class Composite
         this.Items.Add(item);
     }
 
-    public List<int> Flatten()
+    public int[] Flatten()
     {
         throw new NotImplementedException("Flatten is not implemented yet");
     }
