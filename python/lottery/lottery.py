@@ -44,7 +44,7 @@ if __name__ == "__main__":
     while player_budget > bet_cost:
         bet = lottery.create_random_bet()
         draw = lottery.draw()
-        print(f"Player bet f{bet}, winning numbers: f{draw.winning_numbers}")
+        print(f"Player bet {bet}, winning numbers: {draw.winning_numbers}")
         correct = draw.count_correct_numbers(bet)
         win = draw.get_reward(bet, rewards, bet_cost)
         print(f"{correct} correct numbers, player wins {win}.")
