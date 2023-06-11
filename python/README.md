@@ -33,9 +33,47 @@ Oder für eine einzelne Aufgabe:
 
 # Aufgabe 1: Lotto (Test-Driven Development)
 
-- komplett implementieren
-- grundlegende Klassen geben
-- Simulation schreiben (Verwendung dokumentieren)
+Bei einer Lotterie werden mehrere Zahlen aus einem bestimmten Wertebereich
+zufällig gezogen. Der Spieler kann für einen zuvor festgelegten Geldbetrag einen
+Tipp abgeben, welche Zahlen gezogen werden. Je mehr Zahlen von diesem Tipp mit
+den tatsächlich gezogenen Zahlen übereinstimmen, desto höher ist der Gewinn des
+Spielers.
+
+Beispiel: Bei einer Lotterie werden sechs Zahlen von 1 bis 45 gezogen. Für einen
+Geldbetrag von CHF 2.- kann man einen Tipp abgeben. Der Spieler tippt auf die
+Zahlen 1, 13, 25, 37, 41 und 45. Die Ziehung ergibt die Zahlen 5, 13, 24, 37, 44
+und 45. Der Spieler hat drei richtige Zahlen getippt (13, 37 und 45). Er gewinnt
+einen Betrag von CHF 5.- und hat abzüglich der investierten CHF 2.- nun einen
+Gewinn von CHF 3.-.
+
+Im Ordner `lottery/` ist eine solche Lottosimulation als Skript vorbereitet. Die Simulation funktioniert jedoch noch nicht, da die Programmlogik noch fehlt. Diese solle Sie mithilfe von _Test-Driven Development_ umsetzen!
+
+Genauer haben Sie folgende Methoden zu implementieren:
+
+- Die Klasse `Lottery` (Lotterie) enthält die Regeln für die Lottoziehung, d.h.
+Anzahl gezogene Zahlen und den Wertebereich (immer bei 1 beginnend).
+    - Die Methode `draw()` soll auf Grundlage dieser Regel die Ziehung der Gewinnzahlen durchführen. Hierzu wird ein neues `LotteryDraw`-Objekt erstellt. (Tipp: Verwenden Sie das `random`-Modul zur Generierung von Zufallszahlen.)
+    - Die Methode `create_random_bet()` soll für die Simulation des Spielers einen Tipp generieren. Das Ergebnis ist eine Liste von Ganzzahlen, welche die gleiche Bedingungen wie die Gewinnzahlen erfüllen muss (Wertebereich, nur eindeutige Zahlen.)
+- Die Klasse `LotteryDraw` (Lottoziehung) repräsentiert eine konkrete
+Lottoziehung und dient zur Auswertung von Gewinnen.
+    - Die Methode `count_correct_numbers()` vergleicht den gegebenen Tipp (`bet`) mit den Gewinnzahlen (`winning_numbers`) und gibt die Anzahl der übereinstimmenden Zahlen zurück.
+    - Die Methode `get_reward()` berechnet den Gewinn (bzw. Verlust) des Spielers anhand des gegebenen `rewards`-Dictionaries und der Kosten für einen Tipp (`bet_cost`).
+
+Die `TODO`-Kommentare enthalten weitere Hinweise für die Implementierung. Unten
+in `lottery/lottery.py` befindet sich ein Skript, welches mehrere Lottoziehungen
+simuliert. Ein Spieler gibt solange Tipps ab, bis er kein Geld mehr hat.
+
+In `lottery/lottery_test.py` finden Sie eine grobe Struktur für mögliche Testfälle. Sie können weitere Testmethoden schreiben.
+
+Folgen Sie den Regeln von TDD beim Umsetzen der oben beschriebenen Methoden:
+
+1. Schreiben Sie keinen Produktivcode, solange Sie keinen scheiternden Test haben.
+2. Schreiben Sie nur so viel Testcode, um den Test zum Scheitern zu bringen.
+3. Schreiben Sie nur so viel Produktivcode, um den Test zum Durchlaufen zu bringen.
+
+Wenn Sie alle Methoden (korrekt) umgesetzt haben, können Sie die Simulation starten:
+
+    $ python lottery/lottery.py
 
 # Aufgabe 2: ISBN-13 (Clean Code)
 
