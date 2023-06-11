@@ -45,4 +45,4 @@ if __name__ == '__main__':
     numbers.add(Value(8))
     numbers.add(List([Value(9)]))
     print(numbers)
-    # print(numbers.flatten())
+    print(numbers.flatten())
