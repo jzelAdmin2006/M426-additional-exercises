@@ -83,3 +83,7 @@ Testfälle sind in `flatten/composite_test.py` vorhanden:
 Sie können das Beispielskript folgendermassen ausführen:
 
     $ pytest flatten/composite.py
+
+Tipp: Sie können das `Node`-Protokoll um eine Methode erweitern, die dann von
+`Value` und `List` implementiert werden muss. Diese Methode könnte eine Flache
+Liste für das jeweilige Element zurückgeben.
