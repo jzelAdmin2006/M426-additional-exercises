@@ -26,5 +26,6 @@ public class Program
             new Value(9)
         }));
         Console.WriteLine(numbers);
+        Console.WriteLine(numbers.Flatten());
     }
 }
