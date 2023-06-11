@@ -18,7 +18,7 @@ class List(Node):
         self.items: list[Node] = items
 
     def __str__(self) -> str:
-        return '[' + ', '.join(map(str, self.items)) + ']'
+        return "[" + ", ".join(map(str, self.items)) + "]"
 
 
 class Composite:
@@ -29,14 +29,14 @@ class Composite:
         self.items.append(item)
 
     def flatten(self) -> list[int]:
-        raise NotImplementedError('flatten is not implemented yet')
+        raise NotImplementedError("flatten is not implemented yet")
 
     def __str__(self) -> str:
         strings = map(str, self.items)
-        return ', '.join(strings)
+        return ", ".join(strings)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     numbers = Composite()
     numbers.add(Value(0))
     numbers.add(List([Value(1), Value(2), Value(3)]))
