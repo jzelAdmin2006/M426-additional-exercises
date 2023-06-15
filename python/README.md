@@ -4,7 +4,7 @@ Richten Sie zunächst eine virtuelle Umgebung ein und aktivieren Sie sie:
     $ python -m venv env
 
     $ . env/bin/activate       # Linux/Bash
-    $ env/Scripts/activate     # Windows/Bash
+    $ . env/Scripts/activate   # Windows/Bash
     > env/Scripts/Activate.ps1 # Windows/PowerShell
 
 Installieren Sie `pytest` und (optional) `mypy`:
