@@ -40,8 +40,8 @@ konkrete Lottoziehung und dient zur Auswertung von Gewinnen.
     anhand des gegebenen `rewards`-Dictionaries und der Kosten für einen Tipp
     (`betCost`).
     
-Die `TODO`-Kommentare enthalten weitere Hinweise für die Implementierung.  in
-`Programcs` befindet sich die `Main()`-Methode, welche mehrere Lottoziehungen
+Die `TODO`-Kommentare enthalten weitere Hinweise für die Implementierung. In
+`Program.cs` befindet sich die `Main()`-Methode, welche mehrere Lottoziehungen
 simuliert. Ein Spieler gibt solange Tipps ab, bis er kein Geld mehr hat.
 
 In `Lottery.Tests/LotteryTest.cs` finden Sie eine grobe Struktur für mögliche
