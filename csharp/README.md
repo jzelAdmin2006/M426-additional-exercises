@@ -69,7 +69,7 @@ Bücher werden anhand einer
 zehnstellige Zahl (ISBN-10). Heutzutage verwendet man die dreizehnstellige
 ISBN-13, um mit [EAN](https://de.wikipedia.org/wiki/European_Article_Number)
 (European Article Number) kompatibel zu sein. (Als Landespräfix wird die Zahl
-978 verwendet, welche für das fiktive Land _Buchland_ steht.)
+978 oder 979 verwendet, welche für das fiktive Land _Buchland_ steht.)
 
 Die letzte Stelle einer ISBN-13 ist eine sogenannte Prüfsumme, mithilfe welcher
 man mögliche Fehler beim Übermitteln einer ISBN-13 bzw. Fehler beim Scanvorgang
